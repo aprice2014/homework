@@ -1,0 +1,36 @@
+list.html.erb
+ <hmtl>
+
+<head>
+<link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
+</head>
+
+<h2> <font color=green> Great Success! </font> </h2>
+
+<body>
+<% all_books = Book.read %>
+<div class="col-md-6">
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th> Title </th>
+    <th> Author </th>
+  </tr>
+  </thead>
+  <tbody>
+<% all_books.each do |book| %>
+  <tr>
+    <td> <%= book["title"] %> </td>
+    <td> <%= book["author"] %> </td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+</div>
+</body>
+</html>
+
+
+
+
+
