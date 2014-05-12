@@ -1,1 +1,16 @@
 editorspick.html.erb
+<h1> <strong> <font color=blue> Welcome to "Booksapalooza"! </font> </strong> </h1>
+
+<body>
+
+<h2> <em> Here's our Pick as chosen by you! </em> </h2>
+
+<% editors_pick = Review.group("book").order("avg(rating) desc").first[:book] %>
+
+<h3> <strong> Current Editor's Pick: <%= link_to editors_pick, "/books/#{Book.find_by("title" => editors_pick)[:id]}"  %> </strong> </h3>
+<br>
+
+<%= link_to "Click here to see the rest of our books", "/books" %>
+
+</body>
+<end>
