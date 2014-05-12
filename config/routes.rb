@@ -1,7 +1,9 @@
 Homework::Application.routes.draw do
  get "/dice/roll"
 
- get "books" => "books/list"
+ get "books" => "books#list"
+
+ get "ratings" => "books#info"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -5,7 +5,7 @@ list.html.erb
 <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
 </head>
 
-<h2> <font color=green> Great Success! </font> </h2>
+<h2> <font color=green> Books Galore! </font> </h2>
 
 <body>
 <% all_books = Book.read %>
@@ -18,12 +18,19 @@ list.html.erb
   </tr>
   </thead>
   <tbody>
-<% all_books.each do |book| %>
-  <tr>
-    <td> <%= book["title"] %> </td>
-    <td> <%= book["author"] %> </td>
-  </tr>
-<% end %>
+<ul>
+    <% all_books.each do |book| %>
+       <% book_name = book["title"] %>
+     <li>
+    <strong> <%= link_to book_name, "/books/#{book["id"]}" %> </strong>
+
+        Price ($<%= book["price"] %>)
+
+
+
+    <% end %>
+    </li>
+    <% end %>
 </tbody>
 </table>
 </div>
