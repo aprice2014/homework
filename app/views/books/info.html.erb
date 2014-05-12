@@ -8,9 +8,9 @@
 <li>
     Price: ($<%= books["price"] %>)
 </li>
-
+<% name = books["title"] %>
 <li>
-    Average Star Rating: (<%= Rating.read("book_id" => books["id"]).average("rating") %>)
+    Average Star Rating: (<%= Rating.where("title" => name).average("rating") %>)
 </li>
 
 <li>
