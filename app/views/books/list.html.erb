@@ -13,6 +13,7 @@
   <thead>
   <tr>
     <th> Title </th>
+    <th>Author</th>
     <th> Price </th>
   </tr>
   </thead>
@@ -22,8 +23,8 @@
        <% book_name = book["title"] %>
 <tr>
     <strong> <td> <%= link_to book_name, "/books/#{book["id"]}" %> </strong> </td>
-
-<td>  $<%= book["price"] %> </td>
+                     <td> <%= book["author"] %></td>
+                    <td>  $<%= book["price"] %> </td>
 </tr>
 
 
