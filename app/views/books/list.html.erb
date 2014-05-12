@@ -23,7 +23,8 @@
        <% book_name = book["title"] %>
 <tr>
     <strong> <td> <%= link_to book_name, "/books/#{book["id"]}" %> </strong> </td>
-                     <td> <%= book["author"] %></td>
+
+                    <td> <%= book["author"] %> </td>
                     <td>  $<%= book["price"] %> </td>
 </tr>
 
